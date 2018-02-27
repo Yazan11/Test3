@@ -1,0 +1,26 @@
+
+-Change the values of some initial parameters:
+WOB constant increase = true
+WOB = 1
+WOB increase per tick = true
+-Fix initial parameters naming convention.
+
+-Showing uphole actuator
+-Delete downhole actuator defined in the context creator (as the most lower sensor agent is working as an actuator).
+-Introduce the concept of "Run Starting Depth" as we are concerned about last sections of the well, i.e. 8 inch and 6.5 inch.
+-Set Total Depth (Goal Depth) to 5000 m, and starting Run Depth to 2500 m (attempt all tests on these ranges).
+-Get the signal delay as per the current meseured depth.
+-Adding context to field agent.
+-Change the criteria for // if no agent complained of being too hot, speed the drill up and reduce cooling.
+-Field agent now direclty commnuicate with context to increase the speed.
+-Remove messageSASpeedDrill() from upperSensorAgent.
+
+-ContextCreator: Checking entry parameters
+-ContextCreator/assignDifferentLayers(): introduce 'zones/layers' to handle different formations in same run
+-parameters: entry parameters for number of different layers and depth of the variations
+-ContextCreator/assignDifferentLayers(): randomize the variations as per the run length
+-ContextCreator: Modify getROPFactor function to handle all layers
+-ContextCreator/isSoftLayer():Return true if formation is soft for this depth, and false if formation is hard
+-ContextCreator/getROPFactor(): Fix RPM equations, by replacing 0.428 with -.428 and 0.75 with -.75
+-ContextCreator/getROPFactor(): Rename getROPFactor() to getRPMFactor()
+	 
